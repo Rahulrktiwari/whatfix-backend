@@ -17,7 +17,7 @@
     "nodemon": "^3.1.1"
   },
   "engines": {
-    "node": "14.x"  // Specify Node.js 14.x version range
+    "node": "14.x"
   },
   "type": "module"
 }
