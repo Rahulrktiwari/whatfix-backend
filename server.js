@@ -113,7 +113,7 @@ app.get('/get-userdata', async (req, res) => {
 });
 
 
-app.get('/oauth/token', async (req, res) => {
+app.post('/oauth/token', async (req, res) => {
   try {
     const { data, error } = await supabase
       .from('whatfix_onboarding_duplicate') // Replace with your table name
