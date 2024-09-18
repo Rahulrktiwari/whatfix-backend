@@ -113,6 +113,25 @@ app.get('/get-userdata', async (req, res) => {
 });
 
 
+app.get('/oauth/token', async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from('whatfix_onboarding_duplicate') // Replace with your table name
+      .select('*');
+
+    if (error) {
+      throw error;
+    }
+
+    res.json(data);
+  } catch (error) {
+    console.error('Error:', error.message);
+    res.status(500).json({ error: 'Failed to retrieve data', details: error.message });
+  }
+});
+
+
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
